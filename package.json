@@ -6,6 +6,11 @@
   "scripts": {
     "test": "jest"
   },
+  "standard": {
+    "env": [
+      "jest"
+    ]
+  },
   "lint-staged": {
     "*.js": [
       "standard"
@@ -18,5 +23,9 @@
     "jest": "^27.5.1",
     "lint-staged": "^12.3.4",
     "standard": "^16.0.4"
+  },
+  "dependencies": {
+    "express": "^4.17.3",
+    "mongoose": "^6.2.2"
   }
 }
