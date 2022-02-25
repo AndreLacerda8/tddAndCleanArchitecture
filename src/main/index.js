@@ -1,3 +1,9 @@
-const app = require('./config/app')
+const MongoHelper = require('../infra/helpers/mongo-helper')
+const env = require('./config/env')
 
-app.listen(8080, () => console.log('Running...'))
+MongoHelper.connect(env.mongoUrl)
+  .then(() => {
+    const app = require('./config/app')
+    app.listen(8080, () => console.log('Running...'))
+  })
+  .catch(console.error)
